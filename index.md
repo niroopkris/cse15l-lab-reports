@@ -4,7 +4,7 @@
 
 *READ* **MORE**
 
-[Link](https://niroopkris.github.io/cse15l-lab-reports/home.html)
+[Home](https://niroopkris.github.io/cse15l-lab-reports/home.html)
 
  ![Image](https://cdn-icons-png.flaticon.com/512/25/25231.png) 
 
