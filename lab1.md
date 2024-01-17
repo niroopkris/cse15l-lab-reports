@@ -9,7 +9,7 @@
 Working directory: `/home` (home directory). 
 
 There was no output because when we do the `cd` command with no argument, there is no directory given to change to so we stay in the same directory and no change occurs.
-This is technically not an error since the command still processes and no error message is provided - it's just that no apparent change takes place since we did not specify a directory to move to.
+This is technically not an error since the command still processes and no error message is provided: it's just that no apparent change takes place since we did not specify a directory to move to.
 
 ---
 2: Directory
