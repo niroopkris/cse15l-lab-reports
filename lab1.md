@@ -2,7 +2,7 @@
 
 ## cd command
 
-1. No arguments
+1: No arguments
    
 ![Image](cd_noarg.png)
 
@@ -12,7 +12,7 @@ There was no output because when we do the cd command with no argument, there is
 This is not technically an error since the command still processes--it's just that there's no directory change since no argument was given.
 
 ---
-2. Directory
+2: Directory
 
 ![Image](cd_dir.png)
 
@@ -22,12 +22,47 @@ We get sent to the lecture1 directory because we gave `lecture1` as an argument,
 This is not an error.
 
 ---
-3. File
+3: File
 
 ![Image](cd_file_error.png)
 
 Working directory: /home/lecture1
 
-The output is something like an error message saying Hello.java is not a directory. The cd command is meant specifically to change our current working directory, so this error makes sense, since files are different from directories/folders. A file, unlike a directory/folder, is not really a path we can go to in order to access other relative files (as files can't contain other files or folders).  
+The output is something like an error message saying Hello.java is not a directory. The cd command is meant specifically to change our current working directory, so a file argument would naturally cause an error due to files being different from directories/folders. A file, unlike a directory, is not exactly a path we can go to in order to access other relative files/folders (since files can't contain other files/folders).
+
+## ls command
+
+1: No arguments
+   
+![Image](ls_noarg.png)
+
+Working directory: /home/lecture1
+
+The output of the ls command with no arguments is every file and directory within /home/lecture1 (the working directory). Basically, it lists all the files/folders within the current working directory. The output is not an error.
+
+---
+2: Directory
+
+![Image](ls_dir_msg.png)
+
+---
+3: File
+
+![Image](ls_file_hello.png)
+
+## cat command
+
+1: No arguments
+
+![Image](cat_noarg_error.png)
+
+---
+2: Directory
+
+![Image](cat_dir_msg.png)
+
+---
+3: File
+![Image](cat_file_hello.png)
 
 
