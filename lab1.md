@@ -9,7 +9,7 @@
 Working directory: `/home` (home directory). 
 
 There was no output because when we do the `cd` command with no argument, there is no directory given to change to so we stay in the same directory and no change occurs.
-This is not technically an error since the command still processes--it's just that there's no directory change since no argument was given.
+This is technically not an error since the command still processes and no error message is provided - it's just that no apparent change takes place since we did not specify a directory to move to.
 
 ---
 2: Directory
@@ -18,8 +18,7 @@ This is not technically an error since the command still processes--it's just th
 
 Working directory: `/home` (home directory).
 
-We get sent to the lecture1 directory because we gave `lecture1` as an argument, allowing us to change directories properly. This is reflected in the terminal in line 2, as we've moved from `[user@sahara ~]` to `[user@sahara ~/lecture1]`. In other words, our output is the fact that we moved from `/home` to `/home/lecture1`.
-This is not an error.
+We get sent to the `/home/lecture1` directory because we gave `lecture1` (a directory within `/home`) as an argument, allowing us to change directories properly. This is reflected in the terminal in line 2, as we've moved from `[user@sahara ~]` to `[user@sahara ~/lecture1]`. In other words, our output is the fact that we moved from `/home` to `/home/lecture1`. No errors occurred.
 
 ---
 3: File
@@ -38,7 +37,7 @@ The output is an error message saying `Hello.java` is not a directory. The `cd` 
 
 Working directory: `/home/lecture1`
 
-The output of the `ls` command with no arguments is every file and directory within our working directory (`/home/lecture1` in this case). Basically, it lists all the files/folders within the current working directory. The output is not an error.
+The output of the `ls` command with no arguments is a list of every file and directory within our current working directory (`/home/lecture1` in this case), which is why we see `Hello.class`, `Hello.java`, `messages`, and `README`. The output is not an error.
 
 ---
 2: Directory
@@ -47,7 +46,7 @@ The output of the `ls` command with no arguments is every file and directory wit
 
 Working directory: `/home/lecture1`
 
-The output is every .txt file within the `messages` directory, because when using the `ls` command with a directory as an argument, the output will be a list of all the files and directories within the specified directory. In this case, the `messages` directory only has .txt files and no directories within it, so our output reflects that. No errors here.
+Our output is every .txt file within the `messages` directory, because when using the `ls` command with a directory as an argument, the output will be a list of all the files and directories within the specified directory. In this case, the `messages` directory only has .txt files and no directories within it, so our output reflects that. No errors here.
 
 ---
 3: File
@@ -56,7 +55,7 @@ The output is every .txt file within the `messages` directory, because when usin
 
 Working directory: /home/lecture1
 
-Our output when giving a file as an argument is the file itself (`Hello.java` in this case). This is not an error, and isn't really presented as such. There are simply no files or directories "within" the specified file argument (since files aren't directories that hold stuff), so as a result the `ls` command just lists the file itself, which is perfectly valid.
+Our output when giving a file as an argument is the file itself (`Hello.java` in this case). This is not an error, and isn't really presented as such. There are simply no files or directories "within" the specified file argument (since files can't hold stuff like directories/folders do), so as a result the `ls` command just lists the file itself, which is perfectly valid.
 
 ## cat command
 
