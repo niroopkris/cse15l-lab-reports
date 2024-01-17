@@ -8,7 +8,7 @@
 
 Working directory: /home (home directory). 
 
-There was no output because when we do the cd command with no argument, there is no directory given to change to so we stay in the same directory and no change occurs.
+There was no output because when we do the `cd` command with no argument, there is no directory given to change to so we stay in the same directory and no change occurs.
 This is not technically an error since the command still processes--it's just that there's no directory change since no argument was given.
 
 ---
@@ -28,7 +28,7 @@ This is not an error.
 
 Working directory: /home/lecture1
 
-The output is something like an error message saying Hello.java is not a directory. The cd command is meant specifically to change our current working directory, so a file argument would naturally cause an error due to files being different from directories/folders. A file, unlike a directory, is not exactly a path we can go to in order to access other relative files/folders (since files can't contain other files/folders).
+The output is an error message saying Hello.java is not a directory. The `cd` command is meant specifically to change our current working directory, so a file argument would naturally cause an error due to files being different from directories/folders. A file, unlike a directory, is not exactly a path we can go to in order to access other relative files/folders (since files can't contain other files/folders).
 
 ## ls command
 
@@ -38,17 +38,25 @@ The output is something like an error message saying Hello.java is not a directo
 
 Working directory: /home/lecture1
 
-The output of the ls command with no arguments is every file and directory within /home/lecture1 (the working directory). Basically, it lists all the files/folders within the current working directory. The output is not an error.
+The output of the `ls` command with no arguments is every file and directory within /home/lecture1 (the working directory). Basically, it lists all the files/folders within the current working directory. The output is not an error.
 
 ---
 2: Directory
 
 ![Image](ls_dir_msg.png)
 
+Working directory: /home/lecture1
+
+The output is every .txt file within the `messages` directory, because when using the `ls` command with a directory as an argument, the output will be a list of all the files and directories within the specified directory. In this case, the `messages` directory only has .txt files and no directories within it, so our output reflects that. No errors here.
+
 ---
 3: File
 
 ![Image](ls_file_hello.png)
+
+Working directory: /home/lecture1
+
+Our output when giving a file as an argument is the file itself (Hello.java in this case). This is not an error, and isn't really presented as such. There are simply no files or directories "within" the specified file argument (since files aren't directories that hold stuff), so the `ls` command just lists the file itself, which is perfectly valid.
 
 ## cat command
 
