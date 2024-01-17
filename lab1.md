@@ -64,10 +64,14 @@ Our output when giving a file as an argument is the file itself (Hello.java in t
 
 ![Image](cat_noarg_error.png)
 
+There is no output here when doing `cat` with no args. Instead it remains stuck in a loading phase which must be exited by doing CONTROL+C. I'd consider this an error. The `cat` command is supposed to take a file argument since it prints the contents of one or more files to the terminal, so when we give no arguments it makes sense that we get an error (in this case, an infinite loading error with no output).
+
 ---
 2: Directory
 
 ![Image](cat_dir_msg.png)
+
+The output is an error message since we provided a directory (`messages`) as an argument. The `cat` command only prints the contents of one or more files. Trying to print the contents of a directory/folder would be quite complicated and unrealistic given that they often hold sub-directories and numerous files. As such, when we provide a directory as an argument, we get an error message hinting that we need to provide a file as an argument instead.
 
 ---
 3: File
