@@ -60,11 +60,11 @@ Our output when giving a file as an argument is the file itself (`Hello.java` in
 
 1: No arguments
 
-![Image](cat_noarg_error.png)
+![Image](new_cat_noarg.png)
 
 Working directory: `/home/lecture1`
 
-There is no output here when doing `cat` with no args. Instead it remains stuck in a loading phase which must be exited by doing CONTROL+C. This is not necessarily an error, but it is not a desirable output either. The `cat` command is supposed to take a file argument since it prints the contents of one or more files to the terminal, so when we give no arguments it makes sense that we get some odd results (in this case, a seemingly infinite loading time with no output).
+When we do `cat` with no args, we haven't provided a file argument for it to read from, so it instead it will read from the standard input (as in, whatever we input in the terminal). Thus, when I wrote `hey` in the terminal, it outputted `hey` back to me. It will remain like this unless we exit by doing CONTROL+C. This is not an error, as there is no error message or the like (and we get understandable, though perhaps not very desirable, outputs).
 
 ---
 2: Directory
