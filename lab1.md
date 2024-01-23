@@ -4,12 +4,11 @@
 
 1: No arguments
    
-![Image](cd_noarg.png)
+![Image](new_cd_noarg.png)
 
-Working directory: `/home` (home directory). 
+Working directory: `/home/lecture1`
 
-There was no output because when we do the `cd` command with no argument, there is no directory given to change to so we stay in the same directory.
-This is technically not an error since the command still processes — it's just that no apparent change takes place since we did not specify a directory to move to.
+When we do the `cd` command with no arguments, we get moved from our current directory to the `/home` directory. We can see this reflected in the terminal as we've moved from `/home/lecture1` to `/home` despite not putting `home` as an argument. Not an error.
 
 ---
 2: Directory
@@ -65,7 +64,7 @@ Our output when giving a file as an argument is the file itself (`Hello.java` in
 
 Working directory: `/home/lecture1`
 
-There is no output here when doing `cat` with no args. Instead it remains stuck in a loading phase which must be exited by doing CONTROL+C. I'd consider this an error. The `cat` command is supposed to take a file argument since it prints the contents of one or more files to the terminal, so when we give no arguments it makes sense that we get an error (in this case, an infinite loading error with no output).
+There is no output here when doing `cat` with no args. Instead it remains stuck in a loading phase which must be exited by doing CONTROL+C. This is not necessarily an error, but it is not a desirable output either. The `cat` command is supposed to take a file argument since it prints the contents of one or more files to the terminal, so when we give no arguments it makes sense that we get some odd results (in this case, a seemingly infinite loading time with no output).
 
 ---
 2: Directory
