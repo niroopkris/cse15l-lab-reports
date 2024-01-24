@@ -4,7 +4,7 @@
 
 1: No arguments
    
-![Image](new_cd_noarg.png)
+![Image](lab1-img/new_cd_noarg.png)
 
 Working directory: `/home/lecture1`
 
@@ -13,7 +13,7 @@ When we do the `cd` command with no arguments, we get moved from our current dir
 ---
 2: Directory
 
-![Image](cd_dir.png)
+![Image](lab1-img/cd_dir.png)
 
 Working directory: `/home` (home directory).
 
@@ -22,7 +22,7 @@ We get sent to the `/home/lecture1` directory because we gave `lecture1` (a dire
 ---
 3: File
 
-![Image](cd_file_error.png)
+![Image](lab1-img/cd_file_error.png)
 
 Working directory: `/home/lecture1`
 
@@ -32,7 +32,7 @@ The output is an error message saying `Hello.java` is not a directory. The `cd` 
 
 1: No arguments
    
-![Image](ls_noarg.png)
+![Image](lab1-img/ls_noarg.png)
 
 Working directory: `/home/lecture1`
 
@@ -41,7 +41,7 @@ The output of the `ls` command with no arguments is a list of every file and dir
 ---
 2: Directory
 
-![Image](ls_dir_msg.png)
+![Image](lab1-img/ls_dir_msg.png)
 
 Working directory: `/home/lecture1`
 
@@ -50,7 +50,7 @@ Our output is every .txt file within the `messages` directory, because when usin
 ---
 3: File
 
-![Image](ls_file_hello.png)
+![Image](lab1-img/ls_file_hello.png)
 
 Working directory: /home/lecture1
 
@@ -60,7 +60,7 @@ Our output when giving a file as an argument is the file itself (`Hello.java` in
 
 1: No arguments
 
-![Image](new_cat_noarg.png)
+![Image](lab1-img/new_cat_noarg.png)
 
 Working directory: `/home/lecture1`
 
@@ -69,7 +69,7 @@ When we do `cat` with no args, we haven't provided a file argument for it to rea
 ---
 2: Directory
 
-![Image](cat_dir_msg.png)
+![Image](lab1-img/cat_dir_msg.png)
 
 Working directory: `/home/lecture1`
 
@@ -77,7 +77,7 @@ The output is an error message since we provided a directory (`messages`) as an 
 
 ---
 3: File
-![Image](cat_file_hello.png)
+![Image](lab1-img/cat_file_hello.png)
 
 Working directory: `/home/lecture1`
 
