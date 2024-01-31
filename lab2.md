@@ -41,7 +41,7 @@ class ChatServer {
 
 ## Using the add command
 
-Example 1:
+#### Example 1:
 
 ![Image](lab2-img/msg2.png)
 
@@ -50,7 +50,13 @@ Before getting to the screenshot, the first method called is the `main` method, 
 In this screenshot, the `handleRequest` method within the `Handler` class is called. It takes a `URI` argument named `url`, which in this case is literally our url: `http://localhost:4092/add-message?s=goodbye&user=John`. The only field in the `Handler` class is the String `userMessages`. It starts off blank, but when we perform this request, we concatenate (add to) the `userMessages` variable using the request data. We add the user (`john`), a colon (`: `), the message (`goodbye`), and finally a new line `\n`, so that when we add the next person's message, it is on a different line despite being part of the same variable.
 
 ---
-Example 2:
+#### Example 2:
 
 ![Image](lab2-img/msg1.png)
 
+Like in the last example, the `handleRequest` method is called. It takes our `URI` argument with the specific url we used, that being `http://localhost:4092/add-message?s=Hello&user=NiroopK`. At this point, our only String field, `userMessages` is currently equal to `"John: goodbye"` due to our previous request (with a newline below it which is hard to show). With this second add-message request, we concatenate `userMessages` again to include the "Hello" message by the user NiroopK. Thus, the value of this String field becomes `"John: goodbye \n NiroopK: Hello \n"`, which will display like so:
+```
+John: goodbye
+Niroop: Hello
+
+```
