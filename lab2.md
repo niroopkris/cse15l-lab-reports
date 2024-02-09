@@ -1,6 +1,6 @@
 # Lab 2 Report
 
-## Part 1: WebServer.java Code
+## Part 1: Code for WebServer.java 
 ---
 
 ``` 
@@ -55,3 +55,26 @@ In this screenshot, the `handleRequest` method within the `Handler` class is cal
 ![Image](lab2-img/msg1.png)
 
 Like in the last example, the `handleRequest` method is called. It takes our `URI` argument with the specific url we used, that being `http://localhost:4092/add-message?s=Hello&user=NiroopK`. At this point, our String field variable (`userMessages`) is currently equal to `"John: goodbye \n"` due to our earlier request. With this second add-message request, we concatenate the "Hello" message by user "NiroopK" to the `userMessages` field variable. Thus, the value of this String field becomes `"John: goodbye \n NiroopK: Hello \n"`, which will be displayed much more neatly on the site thanks to the "\n" newlines (the output can be seen in the screenshot above).
+
+---
+
+
+## Part 2: Private and Public SSH Keys
+
+### Absolute Path to Private Key
+
+![Image](lab2-img/ls-private-key.png)
+
+After running `ssh-keygen` in my local terminal, the private key `id_rsa` was generated in the `.ssh` file of my home directory (which is `/Users/nkris`). Thus the absolute path to my private key is simply `/Users/nkris/.ssh/id_rsa`.
+
+### Absolute Path to Public Key
+
+![Image](lab2-img/ls-public-key.png)
+
+As per the lab3 instructions, I copied my `id_rsa.pub` file from `/Users/nkris/.ssh/id_rsa.pub` to `nkrishnakumar@ieng6.ucsd.edu:~/.ssh/authorized_keys`, meaning the public key got stored in a file named `authorized_keys` within my ieng6 account. Thus, after logging into my `ieng6` account, I was able to find the absolute path to this copied public key using `~/.ssh/authorized_keys`, which returned this impressively long absolute path: `/home/linux/ieng6/oce/4m/nkrishnakumar/.ssh/authorized_keys`.
+
+###
+
+
+
+
