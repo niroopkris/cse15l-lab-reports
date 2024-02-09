@@ -65,7 +65,7 @@ Like in the last example, the `handleRequest` method is called. It takes our `UR
 
 ![Image](lab2-img/ls-private-key.png)
 
-After running `ssh-keygen` in my local terminal, the private key `id_rsa` was generated in the `.ssh` file of my home directory (which is `/Users/nkris`). Thus the absolute path to my private key is simply `/Users/nkris/.ssh/id_rsa`.
+After running `ssh-keygen` in my local terminal, the private key `id_rsa` was generated in the `.ssh` directory of my home directory (which is `/Users/nkris`). Thus the absolute path to my private key is simply `/Users/nkris/.ssh/id_rsa`.
 
 ---
 
