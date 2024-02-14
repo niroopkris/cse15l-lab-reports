@@ -146,7 +146,7 @@ technical/government/Media/State_funding.txt
 technical/government/Media/The_State_of_Pro_Bono.txt
 ```
 
-Here, we search for `.txt` files containing the word "state" somewhere in their name within the `./technical/government` directory specifically. So his option can  be quite useful when we know what directory to look in and want to search for a file based on our best recollection of what its name is!
+Here, we search for `.txt` files containing the word "state" somewhere in their name within the `./technical/government` directory specifically. So this option can  be quite useful when we know what directory to look in and want to search for a file based on our best recollection of what its name is!
 
 ---
 
