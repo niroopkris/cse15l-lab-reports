@@ -59,23 +59,57 @@ the opposing side of the array. Thus, we end up with a properly-reversed array.
 
 ## Part 2: Researching the `find` Command
 
-### Option 1: `-f <<path>>`
-Source: used the `man find` command 
+### Option 1: `-type`
+Source: learned through these 2 linked articles: [article1](https://www.redhat.com/sysadmin/linux-find-command) , [article2](https://alvinalexander.com/unix/edu/examples/find.shtml)
 
 Example 1:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical -type d
+technical
+technical/government
+technical/government/About_LSC
+technical/government/Env_Prot_Agen
+technical/government/Alcohol_Problems
+technical/government/Gen_Account_Office
+technical/government/Post_Rate_Comm
+technical/government/Media
+technical/plos
+technical/biomed
+technical/911report
 ```
 
-The `-f` option lets us add another path to recurse into, and lists the files in that path too. In this example
+The `-type` option lets us filter our search results by type. In this example, we look within the `./technical` directory but use the `-type d` option to specify that we want only list of the directories within the provided path. This can be useful when we don't want to see every single file in a directory (knowing it could be hundreds or thousands) but simply want an idea of how big a directory is by looking at its subdirectories.
 
+---
 
 Example 2:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical/911report -type f
+technical/911report/chapter-13.4.txt
+technical/911report/chapter-13.5.txt
+technical/911report/chapter-13.1.txt
+technical/911report/chapter-13.2.txt
+technical/911report/chapter-13.3.txt
+technical/911report/chapter-3.txt
+technical/911report/chapter-2.txt
+technical/911report/chapter-1.txt
+technical/911report/chapter-5.txt
+technical/911report/chapter-6.txt
+technical/911report/chapter-7.txt
+technical/911report/chapter-9.txt
+technical/911report/chapter-8.txt
+technical/911report/preface.txt
+technical/911report/chapter-12.txt
+technical/911report/chapter-10.txt
+technical/911report/chapter-11.txt
 ```
 
+Here, by using `-type f`, we're saying we want the `find` command to return ONLY files within the `./technical/911report` directory. There is usefulness to this option considering that, by default, the `find` command returns all files, directories, and other file types which might not be as well known (like pipes, device files, etc) in a specified path. 
+
+---
 
 ### Option 2: `-iname`
-Source: learned through this linked [article](https://www.redhat.com/sysadmin/linux-find-command) 
+Source: used the `man find` command  
 
 Example 1:
 ```
@@ -100,6 +134,8 @@ Niroops-MacBook-Pro:docsearch nkris$ find . -iname "*Chapter*txt"
 
 The `-iname` option does a case-insensitive search for us when we can't remember the exact file name (which is very useful when there are a ton of file names, like in this `docsearch` project!). Here, we're looking for every `.txt` file within our home directory (and sub-directories) with the word "Chapter" in its name. As you can see by the output, uppercase/lowercase is not important (every `.txt` file containing "chapter" was listed).
 
+---
+
 Example 2:
 ```
 Niroops-MacBook-Pro:docsearch nkris$ find technical/government -iname "*state*.txt"
@@ -112,6 +148,7 @@ technical/government/Media/The_State_of_Pro_Bono.txt
 
 Here, we search for `txt` files containing `state` somewhere in their name within the `./technical/government` directory specifically. So his option can  be quite useful when we know what directory to look in and want to search for a file based on our best recollection of what its name is!
 
+---
 
 ### Option 3: `-not <<expression>>`
 Source: used the `man find` command 
@@ -122,10 +159,13 @@ Example 1:
 
 In this example, we are looking for every file in our home directory that is NOT 
 
+---
 
-Example 1:
+Example 2:
 ```
 ```
+
+---
 
 ### Option 4: `-exec`
 Source: learned through this linked [article](https://www.redhat.com/sysadmin/linux-find-command) 
