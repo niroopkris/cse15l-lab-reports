@@ -60,7 +60,7 @@ the opposing side of the array. Thus, we end up with a properly-reversed array.
 ## Part 2: Researching the `find` Command
 
 ### Option 1: `-type`
-Source: learned through these 2 linked articles: [article1](https://www.redhat.com/sysadmin/linux-find-command) , [article2](https://alvinalexander.com/unix/edu/examples/find.shtml)
+Sources: [redhat article](https://www.redhat.com/sysadmin/linux-find-command) , [alvinaalexander article](https://alvinalexander.com/unix/edu/examples/find.shtml)
 
 Example 1:
 ```
@@ -78,7 +78,7 @@ technical/biomed
 technical/911report
 ```
 
-The `-type` option lets us filter our search results by type. In this example, we look within the `./technical` directory but use the `-type d` option to specify that we want only list of the directories within the provided path. This can be useful when we don't want to see every single file in a directory (knowing it could be hundreds or thousands) but simply want an idea of how big a directory is by looking at its subdirectories.
+The `-type` option lets us filter our search results by type. In this example, we look within the `./technical` directory but use the `-type d` option to specify that we want only list of the directories within the provided path. This can be useful when we don't want to see every single file in a directory (knowing it could be hundreds or thousands) and simply want an idea of how big a directory is by looking at its subdirectories.
 
 ---
 
@@ -132,7 +132,7 @@ Niroops-MacBook-Pro:docsearch nkris$ find . -iname "*Chapter*txt"
 ./technical/911report/chapter-11.txt
 ```
 
-The `-iname` option does a case-insensitive search for us when we can't remember the exact file name (which is very useful when there are a ton of file names, like in this `docsearch` project!). Here, we're looking for every `.txt` file within our home directory (and sub-directories) with the word "Chapter" in its name. As you can see by the output, uppercase/lowercase is not important (every `.txt` file containing "chapter" was listed).
+The `-iname` option does a case-insensitive search for us when we can't remember the exact file name (which is very useful when there are a ton of file names, like in this `docsearch` project!). Here, we're looking for every `.txt` file within our home directory (and its sub-directories) with the word "Chapter" in its name. As you can see by the output, uppercase/lowercase is not important (every `.txt` file containing "chapter" was listed).
 
 ---
 
@@ -155,26 +155,70 @@ Source: used the `man find` command
 
 Example 1:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical -not -name "*.txt"
+technical
+technical/government
+technical/government/About_LSC
+technical/government/Env_Prot_Agen
+technical/government/Alcohol_Problems
+technical/government/Gen_Account_Office
+technical/government/Post_Rate_Comm
+technical/government/Media
+technical/plos
+technical/biomed
+technical/911report
 ```
 
-In this example, we are looking for every file in our home directory that is NOT 
+The `-not` option is useful when used in conjuction with another expression or option (ex: `-name`). In this example, we use the `-not` option to look for every file/directory in our home directory that is NOT a `.txt` file. In general, this option could be useful if a directory contained a lot of other file types (like `.java` and `.class` files maybe) and we wanted to get a list of only those files while ignoring a specific file type which was maybe too abundant (ex: `.txt`).
 
 ---
 
 Example 2:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical/911report -not -iname "*chapter*.txt"
+technical/911report
+technical/911report/preface.txt
 ```
+
+Here, we use the `-not` option in conjunction with `-iname` to look for all the files/directories in the `./technical/911report` directory that do not have the word "chapter" (case-insensitive) in their name. This is useful when a directory contains a lot of files with similar names, and we want to find only the files that do NOT include that common word. 
 
 ---
 
 ### Option 4: `-exec`
-Source: learned through this linked [article](https://www.redhat.com/sysadmin/linux-find-command) 
+Source: [redhat article](https://www.redhat.com/sysadmin/linux-find-command) 
 
 Example 1:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical/911report -exec grep -Hi "why was this so" {} \;
+grep: technical/911report: Is a directory
+technical/911report/chapter-11.txt:            Why was this so? Most obviously, it was because everyone was already on edge with the
 ```
+
+In general, the `-exec` option lets us use different commands on whatever is returned by the `find` command, which can be incredibly useful when it comes to efficiency and versatality. In this example, we find all the files/directories in the `./technical/911report` directory and use the `-exec` option so that we can use the `grep` command on the results. In this way, we can search the given files for the string "why was this so". Note that, because `find` returns directories as well as files, we got a tiny issue when using `grep` stating that `grep: technical/911report: Is a directory`. However the `chapter-11.txt` file was still searched properly.
+
+---
 
 Example 2:
 ```
+Niroops-MacBook-Pro:docsearch nkris$ find technical/911report -exec wc {} \;
+wc: technical/911report: read: Is a directory
+    2941   34343  265912 technical/911report/chapter-13.4.txt
+    3237   37985  290993 technical/911report/chapter-13.5.txt
+    1089   10689   89854 technical/911report/chapter-13.1.txt
+    1236   14348  110568 technical/911report/chapter-13.2.txt
+    1718   19349  150467 technical/911report/chapter-13.3.txt
+    3159   33834  264360 technical/911report/chapter-3.txt
+     948   10539   79803 technical/911report/chapter-2.txt
+     731   19260  118656 technical/911report/chapter-1.txt
+    1204   13004   99008 technical/911report/chapter-5.txt
+    1898   19381  149063 technical/911report/chapter-6.txt
+    1579   17276  128370 technical/911report/chapter-7.txt
+    1885   19748  149644 technical/911report/chapter-9.txt
+    1036   11324   84835 technical/911report/chapter-8.txt
+     108    1253    9332 technical/911report/preface.txt
+    1539   15623  127587 technical/911report/chapter-12.txt
+     603    6064   47307 technical/911report/chapter-10.txt
+     817    9414   71151 technical/911report/chapter-11.txt
 ```
 
+In this final example, we first found all files/directories in `./technical/911report`, then added the `-exec` option after so that we could use the `wc` command on the results. Thus, we were able to count the total number of words, lines, and characters in each file within the specified directory. Overall, the `-exec` option gives us a lot of versatality in what we can do, as there are hundreds of commands we can use on top of `find` (like this word-counting command). 
