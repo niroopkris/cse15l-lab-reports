@@ -78,7 +78,7 @@ technical/biomed
 technical/911report
 ```
 
-The `-type` option lets us filter our search results by type. In this example, we look within the `./technical` directory but use the `-type d` option to specify that we want only list of the directories within the provided path. This can be useful when we don't want to see every single file in a directory (knowing it could be hundreds or thousands) and simply want an idea of how big a directory is by looking at its subdirectories.
+The `-type` option lets us filter our search results by type. In this example, we look within the `./technical` directory but use the `-type d` option to specify that we only want a list of the directories within the provided path. This can be useful when we don't want to see every single file in a directory (knowing it could be hundreds or thousands) and simply want an idea of how big a directory is by looking at its subdirectories.
 
 ---
 
@@ -104,7 +104,7 @@ technical/911report/chapter-10.txt
 technical/911report/chapter-11.txt
 ```
 
-Here, by using `-type f`, we're saying we want the `find` command to return ONLY files within the `./technical/911report` directory. There is usefulness to this option considering that, by default, the `find` command returns all files, directories, and other file types which might not be as well known (like pipes, device files, etc) in a specified path. 
+Here, by using `-type f`, we're saying we want the `find` command to return only FILES within the `./technical/911report` directory. There is usefulness to this option considering that, by default, the `find` command returns all files, directories, and other things which might not be as well known (like pipes, device files, etc) in a specified path. 
 
 ---
 
@@ -132,7 +132,7 @@ Niroops-MacBook-Pro:docsearch nkris$ find . -iname "*Chapter*txt"
 ./technical/911report/chapter-11.txt
 ```
 
-The `-iname` option does a case-insensitive search for us when we can't remember the exact file name (which is very useful when there are a ton of file names, like in this `docsearch` project!). Here, we're looking for every `.txt` file within our home directory (and its sub-directories) with the word "Chapter" in its name. As you can see by the output, uppercase/lowercase is not important (every `.txt` file containing "chapter" was listed).
+The `-iname` option does a case-insensitive search for us when we can't remember the exact file name (which is very useful when there are a ton of file names, like in this `docsearch` project). Here, we're looking for every `.txt` file within our home directory (and its sub-directories) with the word "Chapter" in its name. As you can see by the output, uppercase/lowercase letters in the specified word do not make a difference (every `.txt` file containing "chapter" was still listed).
 
 ---
 
@@ -146,7 +146,7 @@ technical/government/Media/State_funding.txt
 technical/government/Media/The_State_of_Pro_Bono.txt
 ```
 
-Here, we search for `txt` files containing `state` somewhere in their name within the `./technical/government` directory specifically. So his option can  be quite useful when we know what directory to look in and want to search for a file based on our best recollection of what its name is!
+Here, we search for `.txt` files containing the word "state" somewhere in their name within the `./technical/government` directory specifically. So his option can  be quite useful when we know what directory to look in and want to search for a file based on our best recollection of what its name is!
 
 ---
 
