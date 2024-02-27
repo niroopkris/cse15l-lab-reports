@@ -11,7 +11,7 @@ Keys pressed: `<up><up><enter>`. The `ssh nkrishnakumar@ieng6.ucsd.edu` command 
 
 ![Image](lab4-img/5-clone)
 
-Keys pressed: `<Ctrl-R>clone<enter>`. I thought pressing <up> to search for the `git clone git@github.com:nk4444/lab7.git` command might take a while so I used `<Ctrl-R>` to access my bash history and searched for `clone`. The command was found and the clone occurred successfully.
+Keys pressed: `<Ctrl-R>clone<enter>`. I thought pressing `<up>` to search for the `git clone git@github.com:nk4444/lab7.git` command might take a while so I used `<Ctrl-R>` to access my bash history and searched for `clone`. The command was found and the clone occurred successfully.
 
 
 ## Step 6: Run Tests (Fail)
