@@ -26,7 +26,7 @@ Keys pressed: `<up><up><up><up><enter>`, then `<Ctrl-R>bash<enter>`. The `cd lab
 ![Image](lab4-img/7-vim)
 ![Image](lab4-img/7-edit)
 
-Keys pressed: `<Ctrl-R>v<enter>`, then `<43<enter>lllllr2<esc>:wq!`. First I wanted to use the vim editor to change `ListExamples.java`, but I didn't know how far back the `vim ListExamples.java` command was in my search history so I first accessed that by using `<Ctrl-R> and typing `v`. The command I wanted showed up with just one letter, which was nice. Once I got to the editor, I typed `43` and <enter> to reach the line number I needed to change. Then I typed `lllll` to go right and reach the letter I needed to change. After that, I typed `r2` to replace the character at my cursor with `2`. Finally I exited insert mode with `<esc> and saved my changes by typing `:wq!` (which also closed the editor in the process).
+Keys pressed: `<Ctrl-R>v<enter>`, then `<43<enter>lllllr2<esc>:wq!`. First I wanted to use the vim editor to change `ListExamples.java`, but I didn't know how far back the `vim ListExamples.java` command was in my search history so I first accessed that by using `<Ctrl-R>` and typing `v`. The command I wanted showed up with just one letter, which was nice. Once I got to the editor, I typed `43` and <enter> to reach the line number I needed to change. Then I typed `lllll` to go right and reach the letter I needed to change. After that, I typed `r2` to replace the character at my cursor with `2`. Finally I exited insert mode with `<esc> and saved my changes by typing `:wq!` (which also closed the editor in the process).
 
 
 ## Step 8: Run Tests (Success)
