@@ -41,7 +41,7 @@ Keys pressed: `<up><up><enter>`. The `bash test.sh` command was only 2 up in my 
 ![Image](lab4-img/9-commit)
 ![Image](lab4-img/9-push)
 
-Keys pressed: `<Ctrl-R>add<enter>`, then `<Ctrl-R>commit<enter>`, then `<Ctrl-R>push<enter>`. Since I had already done a test run which pushed my changes to github during lab, I knew I had the necessary commands in my history. Thus, to reach the `git add .` command, which would 
+Keys pressed: `<Ctrl-R>add<enter>`, then `<Ctrl-R>commit<enter>`, then `<Ctrl-R>push<enter>`. Since I had already done a test run during the lab (in which I pushed my changes to github), I knew I had the necessary commands in my history. Thus, to reach the `git add .` command, which would move all changed files to the staging area, I typed `<Ctrl-R>` and searched for `add`. After that I used `<Ctrl-R>` two more times to find my `git commit -m "changed index1 to index2` command and my `git push origin` command. Thus I was able to commit my changes and push them to my fork.
 
 
 
