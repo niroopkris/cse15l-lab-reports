@@ -26,7 +26,7 @@ Keys pressed: `<up><up><up><up><enter>`, then `<Ctrl-R>bash<enter>`. The `cd lab
 ![Image](lab4-img/7-vim.png)
 ![Image](lab4-img/7-edit.png)
 
-Keys pressed: `<Ctrl-R>v<enter>`, then `<43<enter>lllllr2<esc>:wq!`. First I wanted to use the vim editor to change `ListExamples.java`, but I didn't know how far back the `vim ListExamples.java` command was in my search history so I first accessed that by using `<Ctrl-R>` and typing `v`. The command I wanted showed up with just one letter, which was nice. Once I got to the editor, I typed `43` and <enter> to reach the line number I needed to change. Then I typed `lllll` to go right and reach the letter I needed to change. After that, I typed `r2` to replace the character at my cursor with `2`. Finally I exited insert mode with `<esc> and saved my changes by typing `:wq!` (which also closed the editor in the process).
+Keys pressed: `<Ctrl-R>v<enter>`, then `<43<enter>lllllr2<esc>:wq!`. First I wanted to use the vim editor to make changes to `ListExamples.java`, but I didn't know how far back the `vim ListExamples.java` command was in my search history so I first accessed that by using `<Ctrl-R>` and typing `v`. The command I wanted showed up with just one letter, which was nice. Once I got to the editor, I typed `43` and `<enter>` to reach the line number I needed to change. Then I typed `lllll` to go right and reach the character I needed to change. After that, I typed `r2` to replace the character at my cursor with `2`. Finally I exited insert mode with `<esc>` and saved my changes by typing `:wq!` (which also closed the editor in the process).
 
 
 ## Step 8: Run Tests (Success)
@@ -41,7 +41,7 @@ Keys pressed: `<up><up><enter>`. The `bash test.sh` command was only 2 up in my 
 ![Image](lab4-img/9-commit.png)
 ![Image](lab4-img/9-push.png)
 
-Keys pressed: `<Ctrl-R>add<enter>`, then `<Ctrl-R>commit<enter>`, then `<Ctrl-R>push<enter>`. Since I had already done a test run during the lab (in which I pushed my changes to github), I knew I had the necessary commands in my history. Thus, to reach the `git add .` command, which would move all changed files to the staging area, I typed `<Ctrl-R>` and searched for `add`. After that I used `<Ctrl-R>` two more times to find my `git commit -m "changed index1 to index2` command and my `git push origin` command. Thus I was able to commit my changes and push them to my fork.
+Keys pressed: `<Ctrl-R>add<enter>`, then `<Ctrl-R>commit<enter>`, then `<Ctrl-R>push<enter>`. Since I had already done a test run during the lab (in which I pushed my changes to github), I knew I had the necessary commands in my history. Thus, to reach the `git add .` command, which would move all changed files to the staging area, I typed `<Ctrl-R>` and searched for `add`. After that I used `<Ctrl-R>` two more times to find my `git commit -m "changed index1 to index2"` command and my `git push origin` command. Thus I was able to commit my changes and push them to my fork.
 
 
 
