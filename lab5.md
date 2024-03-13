@@ -38,7 +38,7 @@ report5/
 |-  TestListExamples.class
 ```
 
-## Contents of Files
+### Contents of Files
 Note: Will ignore lib and the class files since they were not touched.
 
 TestListExamples.java
@@ -193,10 +193,16 @@ java -cp $CPATH org.junit.runner.JUnitCore TestListExamples
 
 ### Command Triggering Bug
 
-### Description of Edit to Fix
+The only command line I ran to trigger the bug was `bash grade.sh`, since my bash file did the compiling and running of my test file (which contained the bug).
+
+### Description of Edit Which Fixed The Bug
+
+The bug was related to a double initialization of my variables within the `setup()` method I created. I had declared all my variables and their associated types outside this method by simply writing something like `List<String> expected1;`, but I then included the declaration yet again when initializing them. Instead of initializing by doing `input1 = Arrays.asList("a", "ab", "moon", "bcd");`, I wrote `List<String> input1 = Arrays.asList("a", "ab", "moon", "bcd");` By removing the double declaration, namely the `List<String>` part, all my variables were setup properly and the bug was fixed.
 
 
 ## Part 2: Reflection
+
+I think a big thing I learned in the second half were these bash (.sh) files and the different commands that can be used within them to compile, run, and deal with errors. Like the auto-grader we did in lab and its grade.sh file were pretty eye-opening to me, as it was able to clone a github project, run it within a newly-created directory, and create custom outputs which give you a score and deal with issues like wrong file-names or other code problems. While I can't say I fully understand its syntax rules and commands yet, I think it's a very cool tool which might come in handy for future programs we do. 
 
 
 
